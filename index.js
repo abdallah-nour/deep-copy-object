@@ -1,4 +1,4 @@
-function copyObject(obj = {}) {
+function copyObject2(obj = {}) {
   const res = {};
   Object.entries(obj).map(
     ([key, value]) =>
@@ -6,5 +6,11 @@ function copyObject(obj = {}) {
   );
   return res;
 }
+
+function copyObject(obj = {}) {
+  return JSON.parse(JSON.stringify(obj));
+}
+
+// or using native Browser function structuredClone()
 
 module.exports = copyObject;
